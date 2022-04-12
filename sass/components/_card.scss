@@ -1,0 +1,274 @@
+.card {
+  // fonctionality
+  perspective: 150rem;
+  position: relative;
+  height: 48rem;
+  width: 90%;
+  cursor: pointer;
+
+  &__side {
+    height: 48rem;
+    color: #fff;
+    font-size: 2rem;
+    transition: all 0.8s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    overflow: hidden;
+
+    &-front {
+      background-color: $color-white;
+    }
+    &-back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-secondary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side-front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side-back {
+    transform: rotateY(0deg);
+  }
+
+  // Front Side Styling
+  &__picture {
+    background-size: cover;
+    height: 20rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    @include respond(tab-port) {
+      height: 30rem;
+    }
+    @include respond(phone) {
+      height: 40rem;
+    }
+    &-1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/features-15.jpg);
+    }
+    &-2 {
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.2),
+          rgba($color-primary-dark, 0.2)
+        ),
+        url(../img/service6.jpg);
+    }
+    &-3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/service2.jpg);
+      // background-size: 60%;
+    }
+  }
+  &__heading {
+    color: #ff8e00;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    top: 14rem;
+    left: -3rem;
+    width: 65%;
+    text-align: right;
+    @include respond(tab-port) {
+      left: -20rem;
+    }
+    @include respond(phone) {
+      top: 40rem;
+      font-size: 1.6rem;
+      left: 3rem;
+    }
+  }
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone;
+    opacity: 0.8;
+
+    &-1 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-secondary-light,
+        $color-secondary-dark
+      );
+      opacity: 0.9;
+    }
+    &-2 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
+    }
+    &-3 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      );
+    }
+  }
+  &__details {
+    padding: 3rem;
+    text-align: center;
+    @include respond(phone) {
+      height: 0rem;
+      margin: 0;
+      padding: 0;
+      display: none;
+      visibility: hidden;
+    }
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        color: $color-grey-dark;
+
+        font-size: 1.5rem;
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid #d4d4d4;
+
+          @include respond(phone) {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    // @include respond(phone) {
+    //   padding: 15rem;
+    // }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+  &__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: $color-white;
+  }
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &__price-price {
+    font-size: 6rem;
+    font-weight: 100;
+
+    @include respond(phone) {
+      font-size: 4rem;
+    }
+  }
+
+  /* // Media Query */
+
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    // margin-bottom: 10rem !important;
+    // height: 85vh;
+
+    &:hover &__side-front {
+      transform: rotateY(0);
+    }
+
+    &__side {
+      font-size: 2rem;
+      position: relative;
+      border-radius: 3px;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+      &-back {
+        transform: rotateY(0);
+        height: 20rem;
+        padding: 4rem 0;
+        margin-top: -4.2rem;
+
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    // Front Side Styling
+
+    &__cta {
+      position: relative;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    &__price-box {
+      text-align: center;
+      color: $color-white;
+      margin: 2rem;
+    }
+    &__price-only {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+    &__price-price {
+      font-size: 6rem;
+      font-weight: 100;
+
+      @media (max-width: 250px) {
+        font-size: 2.5rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__details {
+    margin-top: -2rem;
+  }
+  @include respond(tab-port) {
+    // height: 95vh;
+    margin-bottom: 8rem;
+  }
+
+  // @media (max-width: 300px) {
+  //   // width: 80vw;
+  //   margin-left: -4rem;
+  // }
+  .discover {
+    width: 97%;
+  }
+}

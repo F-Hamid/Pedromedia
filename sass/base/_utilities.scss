@@ -1,0 +1,7 @@
+.u-center-text {
+  text-align: center;
+  @include respond(tab-port) {
+    margin: 2rem;
+  }
+}
+

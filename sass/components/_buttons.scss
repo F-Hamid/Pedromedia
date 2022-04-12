@@ -1,0 +1,116 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    //  for <a>
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    // position: relative;
+    font-size: $default-font-size;
+    background-color: $color-grey-light1;
+    color: $color-secondary-dark;
+
+    // for button
+
+    border: none;
+
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0px 1rem 2rem rgba($color-black, 0.2);
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+        color: $color-secondary-dark;
+      }
+    }
+    &:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0px 0.5rem 1rem rgba($color-black, 0.2);
+      color: $color-secondary-dark;
+    }
+
+    &-white {
+      background-color: $color-white;
+      color: $color-secondary-dark;
+      animation: btnMove 1.5s ease-in-out backwards 0.75s;
+      &::after {
+        background-color: $color-white;
+      }
+    }
+    &-green {
+      background-color: $color-primary;
+      color: $color-white;
+      animation: btnMove 1.5s ease-in-out backwards 0.75s;
+      &::after {
+        background-color: $color-primary;
+      }
+      &:hover {
+        color: $color-secondary-dark;
+        background-color: $color-primary;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10rem;
+      z-index: -1;
+      transition: all 0.4s;
+    }
+  }
+
+  .btn-text {
+    &:link,
+    &:visited {
+      font-size: $default-font-size;
+      color: #000;
+      display: inline-flex;
+      text-decoration: none;
+      border-bottom: 1px solid $color-primary;
+      padding: 0.3rem;
+      transition: all 0.3s;
+    }
+    &:hover {
+      background-color: $color-primary;
+      color: $color-secondary-dark;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+      transform: translateY(-0.3rem);
+    }
+    &:active {
+      box-shadow: 0.5rem 1rem rgba($color-black, 0.15);
+      transform: translateY(0);
+    }
+  }
+
+  .réserver {
+    @media (max-width: 450px) {
+      margin-left: auto !important;
+    }
+  }
+}
+
+.infos {
+  // margin-top: 50vh;
+  @include respond(tab-land) {
+    margin-top: 15vh;
+    margin-left: -4vh;
+  }
+  @include respond(tab-port) {
+    margin-top: -15vh;
+    margin-left: -7vh;
+  }
+
+  @media (max-width: 450px) {
+    margin-top: -5vh;
+    margin-left: -5vh;
+  }
+}

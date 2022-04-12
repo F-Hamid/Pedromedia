@@ -1,0 +1,89 @@
+.header {
+  height: 95vh;
+  position: relative;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(/img/bg-1.jpg);
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clip-path: polygon(49% 0, 100% 0, 100% 80%, 0 100%, 0 0); : https://bennettfeely.com ! 
+      */
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  @media only screen and (min-resoultion: 1920dpi) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(/img/hero.jpg);
+  }
+}
+
+.logo-box {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5em;
+}
+.logo {
+  height: 6rem;
+  border-radius: 50%;
+  box-shadow: $main-shadow;
+  opacity: 0.8;
+  transition: all 0.5s;
+}
+.logo:hover {
+  height: 6.5rem;
+  opacity: 1;
+}
+
+.heading-box {
+  position: absolute;
+  top: 38%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  @include respond(phone) {
+    margin-top: 3rem;
+    margin-left: -13rem;
+  }
+
+  @media (max-width: 450px) {
+    margin: -10vw;
+    font-size: -50%;
+  }
+}
+
+.heading__camera {
+  transform: rotateY(180deg);
+  width: 32%;
+  position: absolute;
+  left: -1rem;
+  bottom: -8rem;
+
+  @include respond(tab-port) {
+    width: 28%;
+    left: 1rem;
+    bottom: -5rem;
+  }
+
+  @include respond(phone) {
+    width: 35%;
+    left: -1rem;
+    bottom: -4rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 40%;
+    left: 2rem;
+    bottom: 6rem;
+  }
+}

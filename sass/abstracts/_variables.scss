@@ -1,0 +1,42 @@
+// COLORS
+
+$color-primary: #ffc107;
+$color-primary-light: #ffe459;
+$color-primary-dark: #ffd369;
+$color-grey-text: #777;
+$color-white: #fff;
+$color-black: rgb(0, 0, 0);
+$color-grey-light1: #f7f7f7;
+$color-grey-dark: rgb(100, 100, 100);
+
+$color-secondary-dark: #090910;
+$color-secondary-light: #2c2e43;
+
+$color-tertiary-light: #185adb;
+$color-tertiary-dark: #3d087b;
+// GRID
+$grid-width: 114rem;
+$horizontal-spacing: 6rem;
+$vertical-spacing-small: 6rem;
+$vertical-spacing: 8rem;
+
+// font size
+
+$default-font-size: 1.6rem;
+
+$main-shadow: -0.5rem 0.5rem 1.5rem (rgba(#000, 0.2));
+
+// no letter spacing for arabic
+.letter__spacing {
+  letter-spacing: 0 !important;
+  font-family: "Lemonada";
+}
+.fas {
+  font-family: "FontAwesome" !important;
+}
+.fab {
+  font-family: "FontAwesome" !important;
+}
+.dhs {
+  font-size: 4rem !important;
+}

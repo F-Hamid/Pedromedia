@@ -1,0 +1,114 @@
+.footer {
+  position: relative;
+  background-color: #333;
+  // padding: 10rem 0;
+  font-size: 1.4rem;
+  color: $color-grey-light1;
+
+  @include respond(tab-port) {
+    display: block;
+    text-align: center;
+  }
+  &__title {
+    // transform: translateY(35rem);
+    color: $color-secondary-dark;
+  }
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+  }
+
+  &__logo {
+    transform: translate(36vw, -16vh);
+    width: 8rem;
+    border-radius: 50%;
+
+    box-shadow: $main-shadow;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      transform: translate(35vw, -15vh);
+      width: 6rem;
+    }
+    @include respond(phone) {
+      transform: translate(35vw, -10vh);
+      width: 6rem;
+    }
+  }
+
+  &__navigation {
+    // border-top: 1px solid $color-grey-dark;
+    padding: 2rem;
+    // display: inline-block;
+    z-index: 80;
+    top: -50;
+  }
+
+  &__list {
+    width: 70%;
+    list-style: none;
+    padding: 2rem;
+    transform: translate(-2%, 3rem);
+  }
+
+  &__item {
+    font-size: 6rem;
+    text-align: center;
+    padding: 0;
+    margin: 2rem;
+    display: inline-block;
+    cursor: pointer;
+
+    @include respond(tab-land) {
+      font-size: 5rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 4rem;
+    }
+
+    // @include respond(tab-port) {
+    //   font-size: 3.5rem;
+    // }
+    @media (max-width: 450px) {
+      font-size: 3rem;
+    }
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-secondary-light;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:active {
+      color: $color-tertiary-light;
+
+      transform: scale(1.1) translateY(-0.5rem);
+    }
+  }
+  &__copyright {
+    font-size: 1rem;
+    color: $color-primary;
+    margin: 4rem;
+    border-top: 1px solid $color-primary-dark;
+    padding: 2rem 0;
+    word-spacing: 0.3rem;
+    display: inline-block;
+    transform: translate(35vw, 5rem);
+    @include respond(tab-port) {
+      transform: translate(20vw, 5rem);
+      padding: 2rem 0;
+      margin: 5rem;
+      font-size: 1.2rem;
+    }
+  }
+}

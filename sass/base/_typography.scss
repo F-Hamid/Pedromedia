@@ -1,0 +1,114 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: $color-grey-text;
+  line-height: 1.7;
+  padding: 1.5rem;
+}
+.heading {
+  color: $color-secondary-dark;
+
+  &-text {
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    text-shadow: $main_shadow;
+  }
+  &-main {
+    display: block;
+    font-size: 5.5rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1.5s ease-in-out;
+
+    @include respond(tab-port) {
+      letter-spacing: 0.5rem;
+      font-size: 4.5rem;
+    }
+
+    @include respond(phone) {
+      letter-spacing: 3rem;
+      font-size: 4rem;
+      margin-left: 10rem;
+    }
+    @media (max-width: 450px) {
+      letter-spacing: 2rem;
+      font-size: 3rem;
+      margin-left: 15rem;
+    }
+  }
+  &-sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    animation: moveInRight 1.5s ease-in-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+      font-size: 2rem;
+      margin-left: 10rem;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 1.5;
+      margin-left: 15rem;
+    }
+  }
+
+  &-secondary {
+    display: inline-flex;
+    cursor: pointer;
+    font-size: 3.5rem;
+    margin-bottom: 8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    &:hover {
+      transition: all 0.2s ease-in-out;
+      transform: skewX(15deg) skewY(-2deg) scale(1.1);
+      text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+    }
+
+    @include respond(tab-port) {
+      font-size: 3rem;
+      margin: -5rem;
+    }
+    @include respond(phone) {
+      font-size: 2 rem;
+      margin: 1.5rem;
+    }
+    @media (max-width: 250px) {
+      margin-left: -5rem;
+    }
+  }
+
+  &-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    color: $color-white;
+  }
+}
+
+.paragraph {
+  font-size: $default-font-size;
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    color: $color-grey-light1;
+  }
+}
+.form-heading {
+  margin: 6rem 6rem 0 6rem;
+}

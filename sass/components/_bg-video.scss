@@ -1,0 +1,77 @@
+.gal {
+  position: relative;
+}
+.bg-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  // z-index: -10;
+  opacity: 0.3;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.gal-video {
+  width: 100%;
+  height: 100%;
+  transform: translateX(-6rem);
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: $main-shadow;
+  z-index: 500;
+  @include respond(tab-land) {
+    width: 90%;
+    height: 90%;
+    transform: translateX(2rem);
+  }
+  @include respond(tab-port) {
+    width: 70%;
+    height: 70%;
+    transform: translateX(-6rem);
+    z-index: 0;
+  }
+
+  @media (max-width: 350px) {
+    width: 90%;
+  }
+
+  @media (max-width: 250px) {
+    width: 150%;
+  }
+}
+
+.video-btn {
+  position: absolute;
+  width: 4rem;
+  font-size: 2.5rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  background: $color-secondary-light;
+  opacity: 0.6;
+  color: #fff;
+  text-align: center;
+  left: -5.5rem;
+  bottom: 0.5rem;
+  // transform: translate(-5.5rem, -5.5rem);
+  cursor: pointer;
+
+  @include respond(tab-land) {
+    left: 3rem;
+    bottom: 3rem;
+    font-size: 1.5rem;
+  }
+  @include respond(tab-port) {
+    font-size: 1.5rem;
+    left: -4rem;
+    bottom: 1rem;
+    // transform: translate(-5rem, 6rem);
+  }
+}
+
+.video-btn:hover {
+  background: $color-primary-dark;
+  color: black;
+}
